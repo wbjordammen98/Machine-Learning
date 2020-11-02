@@ -46,4 +46,22 @@ predicted = knn.predict(X=x_test)
 expected = y_test
 
 print(predicted[:20])
-print(predicted[:20])
+print(expected[:20])
+
+wrong = [(p,e) for (p,e) in zip(predicted,expected) if p != e]
+print(wrong)
+print(format(knn.score(x_test,y_test), ".2%"))
+
+from sklearn.metrics import confusion_matrix
+
+cf = confusion_matrix(y_true=expected,y_pred=predicted)
+print(cf)
+
+import pandas as pd
+import seaborn as sns
+import matplotlib.pyplot as plt2
+
+cf_df = pd.DataFrame(cf,index=range(10),columns=range(10))
+fig = plt2.figure(figsize=(7,6))
+axes = sns.heatmap(cf_df, annot=True, cmap=plt2.cm.nipy_spectral_r)
+plt2.show()
