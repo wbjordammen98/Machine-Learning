@@ -26,18 +26,15 @@ import seaborn as sns
 sns.set(font_scale=2)
 sns.set_style("whitegrid")
 
-for feature in cali.feature_names:
-    plt.figure(figsize=(8,4.5))
-    sns.scatterplot(
-        data=sample_df,
-        x=feature,
-        y="MedHouseValue",
-        hue="MedHouseValue",
-        palette="cool",
-        legend=False,
+plt.figure()
+grid = sns.pairplot(
+        data=cali_df,
+        vars=cali_df.columns[0:4]
     )
+    
+plt.show()
 
-#plt.show()
+"""
 
 from sklearn.model_selection import train_test_split
 
@@ -81,4 +78,7 @@ axes.set_ylim(start,end)
 
 line = plt2.plot([start, end], [start, end], "k--")
 
-plt2.show()
+#plt2.show()
+
+"""
+
