@@ -26,7 +26,6 @@ import seaborn as sns
 sns.set(font_scale=2)
 sns.set_style("whitegrid")
 
-plt.figure()
 grid = sns.pairplot(
         data=cali_df,
         vars=cali_df.columns[0:4]
