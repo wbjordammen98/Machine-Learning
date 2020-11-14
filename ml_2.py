@@ -34,7 +34,7 @@ y = predict(x)
 
 line = plt.plot(x,y)
 
-#### Machine Learning Exercise question 2.
+#### Machine Learning Exercise question 2. #####
 
 n = csv.reader(open("ave_yearly_temp_nyc_1895-2017.csv"))
 next(n)

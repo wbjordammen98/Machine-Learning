@@ -1,3 +1,4 @@
+# Machine Learning exercise problem 1.
 from sklearn.datasets import fetch_california_housing
 
 cali = fetch_california_housing()
